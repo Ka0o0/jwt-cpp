@@ -2668,10 +2668,10 @@ namespace jwt {
 	 */
 	template<typename json_traits>
 	class builder {
+	public:
 		typename json_traits::object_type header_claims;
 		typename json_traits::object_type payload_claims;
 
-	public:
 		builder() = default;
 		/**
 		 * Set a header claim.
@@ -2715,9 +2715,6 @@ namespace jwt {
 			return *this;
 		}
 
-		typename json_traits::value_type get_header_claims() const { return header_claims.to_json(); }
-
-		typename json_traits::value_type get_payload_claims() const { return payload_claims.to_json(); }
 		/**
 		 * \brief Set algorithm claim
 		 * You normally don't need to do this, as the algorithm is automatically set if you don't change it.
