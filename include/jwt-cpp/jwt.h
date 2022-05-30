@@ -2714,6 +2714,10 @@ namespace jwt {
 			payload_claims[id] = c.to_json();
 			return *this;
 		}
+
+		typename json_traits::value_type get_header_claims() const { return header_claims.to_json(); }
+
+		typename json_traits::value_type get_payload_claims() const { return payload_claims.to_json(); }
 		/**
 		 * \brief Set algorithm claim
 		 * You normally don't need to do this, as the algorithm is automatically set if you don't change it.
